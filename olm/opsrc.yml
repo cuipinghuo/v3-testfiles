@@ -1,0 +1,13 @@
+apiVersion: "operators.coreos.com/v1"
+kind: "OperatorSource"
+metadata:
+  name: "opsrctest"
+  namespace: "openshift-marketplace"
+  labels:
+    opsrc-provider: opsrctest
+spec:
+  type: appregistry
+  endpoint: "https://quay.io/cnr"
+  registryNamespace: "cuipinghuo"
+  displayName: "opsrctest"
+  publisher: "opsrctest"
