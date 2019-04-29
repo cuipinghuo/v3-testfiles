@@ -1,8 +1,8 @@
 apiVersion: operators.coreos.com/v1
 kind: CatalogSourceConfig
 metadata:
-  name: opsrctest
+  name: testcsc
   namespace: openshift-marketplace
 spec:
-  targetNamespace: openshift-marketplace
+  targetNamespace: default
   packages: etcd-test

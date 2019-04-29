@@ -1,12 +1,12 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: etcd-sub
+  name: etcd-test-sub
   namespace: default
 spec:
   channel: singlenamespace-alpha
   installPlanApproval: Manual
   name: etcd-test
-  source: opsrctest
-  sourceNamespace: openshift-marketplace
+  source: testcsc
+  sourceNamespace: default
   startingCSV: etcdoperator.v0.9.0

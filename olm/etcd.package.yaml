@@ -2,3 +2,5 @@ packageName: etcd-test
 channels:
 - name: singlenamespace-alpha
   currentCSV: etcdoperator.v0.9.4
+- name: clusterwide-alpha
+  currentCSV: etcdoperator.v0.9.4-clusterwide
