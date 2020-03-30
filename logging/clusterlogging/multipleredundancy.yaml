@@ -2,12 +2,13 @@ apiVersion: "logging.openshift.io/v1"
 kind: "ClusterLogging"
 metadata:
   name: "instance"
+  namespace: openshift-logging
 spec:
   managementState: "Managed"
   logStore:
     type: "elasticsearch"
     elasticsearch:
-      nodeCount: 3
+      nodeCount: 5
       resources:
         limits:
           memory: 2Gi

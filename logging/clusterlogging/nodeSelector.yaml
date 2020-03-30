@@ -2,39 +2,36 @@ apiVersion: "logging.openshift.io/v1"
 kind: "ClusterLogging"
 metadata:
   name: "instance"
+  namespace: openshift-logging
 spec:
   managementState: "Managed"
   logStore:
     type: "elasticsearch"
     elasticsearch:
       nodeSelector:
-        logging: es
+        es: deploy
       nodeCount: 1
       resources:
-        limits:
-          memory: 2Gi
         requests:
           cpu: 200m
           memory: 2Gi
-      storage:
-        size: "20G"
-        storageClassName: "gp2"
+      storage: {}
       redundancyPolicy: "ZeroRedundancy"
   visualization:
     type: "kibana"
     kibana:
       nodeSelector:
-        logging: kibana
+        kibana: deploy
       replicas: 1
   curation:
     type: "curator"
     curator:
       nodeSelector:
-        logging: curator
+        curator: deploy
       schedule: "*/10 * * * *"
   collection:
     logs:
       type: "fluentd"
       fluentd:
         nodeSelector:
-          logging: fluentd
+          fluentd: deploy
